@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="dare2registration:war exploded">
-    <output-path>$PROJECT_DIR$/untitled/target/test</output-path>
+    <output-path>$PROJECT_DIR$/dare2registration/target/test</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="dare2registration/web/Web" />
       <element id="directory" name="WEB-INF">
@@ -72,6 +72,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jpa:2.0.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-dao:2.0.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:2.0.8" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-client:1.18.1" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-core:1.18.1" />
         </element>
       </element>
     </root>
