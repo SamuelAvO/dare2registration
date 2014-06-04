@@ -33,13 +33,13 @@ public class ApplyRegistrationEndpoint {
         RegistrationResult result = new RegistrationResult();
         if (verifyRegistration.verifyRegistration(req.getInput().getSubscriber()) == true) {
             result.setSucceeded(true);
-            conformRegistration.confirmNewSubscriber(req.getInput().getSubscriber());
+            //conformRegistration.confirmNewSubscriber(req.getInput().getSubscriber());
         } else {
             result.setSucceeded(false);
         }
 
         result.setMessage("Here are the results of the jury for the calculation ");
-        result.setSucceeded(false);
+        //result.setSucceeded(false);
         RegistrationResponse resp = new RegistrationResponse();
         resp.setResult(result);
 
