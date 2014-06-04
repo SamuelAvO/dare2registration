@@ -13,27 +13,87 @@
 
     <complexType name="ApplyRegistration">
         <all>
-			<element name="subscriber" type="tns:Subscriber" minOccurs="1" maxOccurs="1"/>
-			<element name="paymentData" type="tns:PaymentData" minOccurs="1" maxOccurs="1"/>
+            <element name="subscriber" type="tns:Subscriber" minOccurs="1" maxOccurs="1"/>
+            <element name="paymentData" type="tns:PaymentData" minOccurs="1" maxOccurs="1"/>
         </all>
     </complexType>
 
     <complexType name="Subscriber">
-		<sequence>
-			<element name="Name" type="string"/>
-			<element name="Username" type="string"/>
-			<element name="Address" type="string"/>
-			<element name="Password" type="string"/>
-			<element name="Email" type="string"/>
-		</sequence>
+        <sequence>
+            <element name="Name">
+                <simpleType>
+                    <restriction base="string">
+                        <minLength value="2"/>
+                        <maxLength value="124"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="Username">
+                <simpleType>
+                    <restriction base="string">
+                        <minLength value="2"/>
+                        <maxLength value="30"/>
+                        <pattern value="([a-zA-Z0-9])*"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="Address">
+                <simpleType>
+                    <restriction base="string">
+                        <minLength value="2"/>
+                        <maxLength value="512"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="Password">
+                <simpleType>
+                    <restriction base="string">
+                        <minLength value="6"/>
+                        <maxLength value="512"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="Email">
+                <simpleType>
+                    <restriction base="string">
+                        <minLength value="6"/>
+                        <maxLength value="124"/>
+                        <pattern value="[^@]+@[^\.]+\..+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
     </complexType>
 
-	<complexType name="PaymentData">
-		<sequence>
-			<element name="Number" type="string"/>
-			<element name="ExpireDate" type="date"/>
-			<element name="Name" type="string"/>
-			<element name="securityCode" type="string"/>
-		</sequence>
-	</complexType>
+    <complexType name="PaymentData">
+        <sequence>
+            <element name="Number">
+                <simpleType>
+                    <restriction base="string">
+                        <minLength value="6"/>
+                        <maxLength value="30"/>
+                        <pattern value="([0-9])*"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="ExpireDate" type="date"/>
+            <element name="Name">
+                <simpleType>
+                    <restriction base="string">
+                        <minLength value="2"/>
+                        <maxLength value="124"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="securityCode">
+                <simpleType>
+                    <restriction base="string">
+                        <minLength value="3"/>
+                        <maxLength value="6"/>
+                        <pattern value="([0-9])*"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
 </schema>
