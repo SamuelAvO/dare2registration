@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.han.nl/schemas/types"
+        xmlns:tns="http://www.han.nl/schemas/types"
+        elementFormDefault="qualified">
+
+    <complexType name="RegistrationResult">
+        <all>
+            <element name="succeeded" type="boolean"/>
+            <element name="message" type="string"/>
+        </all>
+    </complexType>
+
+    <complexType name="ApplyRegistration">
+        <all>
+			<element name="subscriber" type="tns:Subscriber" minOccurs="1" maxOccurs="1"/>
+			<element name="paymentData" type="tns:PaymentData" minOccurs="1" maxOccurs="1"/>
+        </all>
+    </complexType>
+
+    <complexType name="Subscriber">
+		<sequence>
+			<element name="Name" type="string"/>
+			<element name="Username" type="string"/>
+			<element name="Address" type="string"/>
+			<element name="Password" type="string"/>
+			<element name="Email" type="string"/>
+		</sequence>
+    </complexType>
+
+	<complexType name="PaymentData">
+		<sequence>
+			<element name="Number" type="string"/>
+			<element name="ExpireDate" type="date"/>
+			<element name="Name" type="string"/>
+			<element name="securityCode" type="string"/>
+		</sequence>
+	</complexType>
+</schema>

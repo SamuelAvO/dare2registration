@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dare2registration:war">
+    <output-path>$PROJECT_DIR$/untitled/target</output-path>
+    <root id="archive" name="test.war">
+      <element id="artifact" artifact-name="dare2registration:war exploded" />
+    </root>
+  </artifact>
+</component>
